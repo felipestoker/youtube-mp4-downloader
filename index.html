@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baixar Vídeo do YouTube</title>
+    <script>
+        async function baixarVideo() {
+            const url = document.getElementById("url").value;
+            const response = await fetch(`/download?url=${encodeURIComponent(url)}`);
+            const result = await response.text();
+            alert(result);
+        }
+    </script>
+</head>
+<body>
+    <h1>Baixar Vídeo do YouTube</h1>
+    <label for="url">URL do vídeo:</label>
+    <input type="text" id="url" placeholder="Insira o URL do vídeo">
+    <button onclick="baixarVideo()">Baixar Vídeo</button>
+</body>
+</html>
